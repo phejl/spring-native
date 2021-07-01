@@ -55,7 +55,8 @@ final class Target_ContextInitializer {
 				sm.add(new ErrorStatus("Groovy classes are not available on the class path. ABORTING INITIALIZATION.", loggerContext));
 			}
 		} else {
-			throw new LogbackException("Unexpected filename extension of file [" + url.toString() + "]. Should be either .groovy or .xml");
+			throw new LogbackException("Unexpected filename extension of file [" + url.toString() + "]. Should be .groovy. " +
+					"XML configuration is not yet supported by Spring Native: https://github.com/spring-projects-experimental/spring-native/issues/625");
 		}
 	}
 }
